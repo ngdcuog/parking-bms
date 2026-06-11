@@ -1,0 +1,159 @@
+:root {
+  /* Carbon Colors */
+  --colors-primary: #0f62fe;
+  --colors-primary-hover: #0050e6;
+  --colors-primary-active: #002d9c;
+  --colors-on-primary: #ffffff;
+  --colors-ink: #161616;
+  --colors-ink-muted: #525252;
+  --colors-ink-subtle: #8c8c8c;
+  --colors-canvas: #ffffff;
+  --colors-surface-1: #f4f4f4;
+  --colors-surface-2: #e0e0e0;
+  --colors-inverse-canvas: #161616;
+  --colors-inverse-surface-1: #262626;
+  --colors-inverse-ink: #ffffff;
+  --colors-inverse-ink-muted: #c6c6c6;
+  --colors-hairline: #e0e0e0;
+  --colors-hairline-strong: #161616;
+
+  /* Semantic Colors */
+  --colors-semantic-success: #24a148;
+  --colors-semantic-warning: #f1c21b;
+  --colors-semantic-error: #da1e28;
+  --colors-semantic-info: #0f62fe;
+
+  /* Spacing Tokens */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 96px;
+}
+
+/* Typography Utility Classes */
+.display-xl {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 76px;
+  font-weight: 300;
+  line-height: 1.17;
+  letter-spacing: -0.5px;
+  color: var(--colors-ink);
+}
+
+.display-lg {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.17;
+  letter-spacing: -0.4px;
+  color: var(--colors-ink);
+}
+
+.display-md {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.20;
+  letter-spacing: 0;
+  color: var(--colors-ink);
+}
+
+.headline {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--colors-ink);
+}
+
+.card-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0;
+  color: var(--colors-ink);
+}
+
+.subhead {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.40;
+  letter-spacing: 0;
+  color: var(--colors-ink);
+}
+
+.body-lg {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0;
+  color: var(--colors-ink);
+}
+
+.body-default {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0.16px;
+  color: var(--colors-ink);
+}
+
+.body-sm {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+  color: var(--colors-ink-muted);
+}
+
+.body-emphasis {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+  color: var(--colors-ink);
+}
+
+.caption {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+  color: var(--colors-ink-subtle);
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+  color: var(--colors-primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--colors-surface-1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--colors-surface-2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--colors-ink-subtle);
+}

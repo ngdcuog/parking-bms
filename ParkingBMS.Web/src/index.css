@@ -1,0 +1,164 @@
+@import './styles/variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--colors-canvas);
+  color: var(--colors-ink);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove Ant Design default button shadow */
+.ant-btn {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.ant-btn-primary {
+  background-color: var(--colors-primary) !important;
+}
+.ant-btn-primary:hover {
+  background-color: var(--colors-primary-hover) !important;
+}
+.ant-btn-primary:active {
+  background-color: var(--colors-primary-active) !important;
+}
+
+/* Ant Design Input Styling (Flat Carbon style) */
+.ant-input, .ant-input-password, .ant-select-selector {
+  border-radius: 0px !important;
+  background-color: var(--colors-surface-1) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--colors-surface-2) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.ant-input:hover, .ant-input-password:hover, .ant-select-selector:hover {
+  border-bottom: 1px solid var(--colors-hairline-strong) !important;
+}
+
+.ant-input:focus, .ant-input-focused, .ant-select-focused .ant-select-selector {
+  background-color: var(--colors-surface-1) !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid var(--colors-primary) !important;
+}
+
+/* Input Error status override */
+.ant-input-status-error, .ant-select-status-error .ant-select-selector {
+  border-bottom: 2px solid var(--colors-semantic-error) !important;
+}
+
+/* Ant Design Card Override */
+.ant-card {
+  border-radius: 0px !important;
+  border: 1px solid var(--colors-hairline) !important;
+  box-shadow: none !important;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid var(--colors-hairline) !important;
+  background-color: var(--colors-surface-1) !important;
+  border-radius: 0px !important;
+}
+
+/* Tables Styling overrides */
+.ant-table-wrapper .ant-table {
+  border-radius: 0px !important;
+  border: 1px solid var(--colors-hairline) !important;
+}
+
+.ant-table-thead > tr > th {
+  border-bottom: 1px solid var(--colors-hairline) !important;
+  background-color: var(--colors-surface-1) !important;
+  color: var(--colors-ink) !important;
+  font-weight: 600 !important;
+  border-radius: 0px !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--colors-hairline) !important;
+}
+
+/* Tabs Styling overrides */
+.ant-tabs-nav {
+  margin-bottom: 24px !important;
+}
+
+.ant-tabs-ink-bar {
+  background: var(--colors-primary) !important;
+  height: 2px !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--colors-ink) !important;
+  font-weight: 600 !important;
+}
+
+.ant-tabs-tab:hover {
+  color: var(--colors-primary-hover) !important;
+}
+
+/* Grid Cell design rules */
+.slot-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--colors-hairline);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px;
+}
+
+.slot-cell:hover {
+  filter: brightness(0.92);
+}
+
+.slot-free {
+  background-color: #e3f9eb;
+  border-color: var(--colors-semantic-success);
+  color: var(--colors-semantic-success);
+}
+
+.slot-occupied {
+  background-color: #ffebe9;
+  border-color: var(--colors-semantic-error);
+  color: var(--colors-semantic-error);
+}
+
+.slot-reserved {
+  background-color: #fff9e6;
+  border-color: var(--colors-semantic-warning);
+  color: #b78a00;
+}
+
+.slot-maintenance {
+  background-color: var(--colors-surface-1);
+  border-color: var(--colors-surface-2);
+  color: var(--colors-ink-muted);
+}
+
+.slot-locked {
+  background-color: var(--colors-surface-2);
+  border-color: var(--colors-ink-subtle);
+  color: var(--colors-ink-subtle);
+}
+
+/* Clean scrollable content height */
+.main-content-scroll {
+  overflow-y: auto;
+  height: calc(100vh - 80px);
+}
