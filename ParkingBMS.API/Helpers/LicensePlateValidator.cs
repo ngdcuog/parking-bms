@@ -6,23 +6,22 @@ namespace ParkingBMS.API.Helpers
     public static class LicensePlateValidator
     {
         // Xe máy CŨ (TT 58/2020): [2 số][1 chữ B-Z trừ I][1 số 1-9]-[4 hoặc 5 số]
-        // Dấu gạch ngang là tùy chọn để hỗ trợ nghiệp vụ thực tế nhập không dấu.
-        // VD: 51H1-1234, 51H11234, 29K2-12345, 29K212345
+        // Hỗ trợ cả định dạng viết liền không dấu, có hoặc không có dấu chấm ở biển 5 số (VD: 12345 hoặc 123.45).
+        // VD: 51H1-1234, 51H11234, 29K2-123.45, 29K212345
         private static readonly Regex MotoOld4 = new(@"^\d{2}[BCDEFGHKLMNPSTUVXYZ][1-9]-?\d{4}$", RegexOptions.Compiled);
-        private static readonly Regex MotoOld5 = new(@"^\d{2}[BCDEFGHKLMNPSTUVXYZ][1-9]-?\d{5}$", RegexOptions.Compiled);
+        private static readonly Regex MotoOld5 = new(@"^\d{2}[BCDEFGHKLMNPSTUVXYZ][1-9]-?(\d{5}|\d{3}\.?\d{2})$", RegexOptions.Compiled);
 
         // Xe máy MỚI định danh (TT 24/2023): [2 số][2 chữ A-Z trừ IOQRW]-[3 số].[2 số]
-        // Dấu gạch ngang và dấu chấm là tùy chọn.
         // VD: 51AB-123.45, 51AB12345, 29HA-002.33, 29HA00233
-        private static readonly Regex MotoNew  = new(@"^\d{2}[ABCDEFGHKLMNPSTUVXYZ]{2}-?\d{3}\.?\d{2}$", RegexOptions.Compiled);
+        private static readonly Regex MotoNew  = new(@"^\d{2}[ABCDEFGHKLMNPSTUVXYZ]{2}-?(\d{5}|\d{3}\.?\d{2})$", RegexOptions.Compiled);
 
-        // Ô tô: [2 số][1 chữ]-[4 hoặc 5 số], dấu gạch ngang và dấu chấm tùy chọn
-        // VD: 51A-12345, 51A12345, 30G-6789, 30G6789, 43H-123.45, 43H12345
-        private static readonly Regex CarPlate = new(@"^\d{2}[A-Z]-?\d{4,5}(\.?\d{2})?$", RegexOptions.Compiled);
+        // Ô tô: [2 số tỉnh][1 chữ cái]- [4 số hoặc 5 số (xxx.xx hoặc xxxxx)]
+        // VD: 51A-1234, 51A-123.45, 51A12345, 30G-6789, 43H-123.45
+        private static readonly Regex CarPlate = new(@"^\d{2}[A-Z]-?(\d{4}|\d{5}|\d{3}\.?\d{2})$", RegexOptions.Compiled);
 
-        // Xe tải: [2 số][1-2 chữ]-[4-5 số], dấu gạch ngang và dấu chấm tùy chọn
-        // VD: 51D-12345, 51D12345, 51LD-1234, 51LD1234
-        private static readonly Regex TruckPlate = new(@"^\d{2}[A-Z]{1,2}-?\d{4,5}(\.?\d{2})?$", RegexOptions.Compiled);
+        // Xe tải: [2 số tỉnh][1-2 chữ cái]- [4 số hoặc 5 số (xxx.xx hoặc xxxxx)]
+        // VD: 51D-12345, 51D12345, 51LD-123.45, 51LD1234
+        private static readonly Regex TruckPlate = new(@"^\d{2}[A-Z]{1,2}-?(\d{4}|\d{5}|\d{3}\.?\d{2})$", RegexOptions.Compiled);
 
         // Fallback cho Biển số đặc biệt (Xe quân sự, Ngoại giao, Xe công an, hoặc nhập tay đặc cách)
         // Nghiệp vụ thực tế: Nhân viên (Staff) không được phép bị chặn khi xe đặc biệt vào bãi.
