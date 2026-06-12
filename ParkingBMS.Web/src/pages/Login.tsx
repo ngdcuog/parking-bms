@@ -18,8 +18,8 @@ export const Login: React.FC = () => {
     setErrorMsg(null);
     try {
       const response = await api.post('/auth/login', values);
-      const { userId, username, fullName, role, accessToken } = response.data.data;
-      const user = { userId, username, fullName, role };
+      const { userId, username, fullName, role, buildingId, buildingName, accessToken } = response.data.data;
+      const user = { userId, username, fullName, role, buildingId, buildingName };
       setAuth(user, accessToken);
 
       // Redirect based on user role
